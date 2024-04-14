@@ -39,7 +39,7 @@ export default function Nav(){
               <nav className={`navbar ${scrollPosition ? 'z-50 fixed-nav max-w-screen  h-20 p-5 fixed justify-between shadow-sm  bg-[#41C9E2]' : ''}`}>
 
           <div className='flex-1 flex-start justify-center ml-32'>
-          <a className="font-semibold mr-32 "  href="/#">Event Scheduler - <span className='font-thin'>ongoing project</span> </a>
+          <a className="font-semibold mr-32 text-xl "  href="/#">Event Scheduler - <span className='font-thin'>ongoing project</span> </a>
 
           </div>
           <div > 
