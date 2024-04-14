@@ -9,7 +9,6 @@ function App() {
     <div >
       
       <Landing2/>
-      <hr className="mt-2 h-4 " />
       <Upcomming/>
       <Footer/>
 
