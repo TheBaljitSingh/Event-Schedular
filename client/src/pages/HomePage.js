@@ -4,8 +4,8 @@ import culturalImg from "../assets/images/diwali-celebration.svg"
 import singerImg from "../assets/images/singer.svg"
 import aiImg from "../assets/images/ai.jpg"
 import concertImg from "../assets/images/concert.jpg"
-
 function HomePage() {
+
 
   const events = [
     {
@@ -55,8 +55,8 @@ function HomePage() {
 
 
   return (
-    <div>
-    <div className="bg-[url('https://maps.olakrutrim.com/images/hero/bg.webp')] flex justify-center items-center min-w-full h-screen md:min-h-[750px] min-h-screen pb-20 pt-45 mx-auto p-4 " >
+    <div className="bg-opacity-50">
+    <div className={`bg-smart-pay bg-contain flex justify-center items-center min-w-full h-screen md:min-h-[750px] min-h-screen pb-20 pt-45 mx-auto p-4 `} >
       <div className='mx-auto w-full px-4 md:px-8'>
         <div className='flex flex-col'>
           <div className='flex justify-center items-center gap-8 flex-col'>
@@ -93,7 +93,7 @@ function HomePage() {
     <p class="mb-12">Here's what we’re organising</p>
     
 
-    <div className="mt-8 grid grid-cols-1 gap-11 md:grid-cols-2 lg:mt-15 lg:grid-cols-3 xl:mt-20 xl:gap-12.5">
+    <div className="mt-8 grid grid-cols-1 gap-11 md:grid-cols-2 lg:mt-15 lg:grid-cols-3 xl:mt-20 xl:gap-12.5 ">
       {events.map(event => (
         <div
           key={event.id}

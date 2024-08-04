@@ -7,12 +7,12 @@ function Header() {
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollTop, setLastScrollTop] = useState(0);
 
-  console.log(lastScrollTop);
+
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      if (scrollTop > 150 && scrollTop> lastScrollTop) {
+      if (scrollTop > 70 && scrollTop> lastScrollTop) {
         setShowHeader(false); // Hide header on scroll down
       } else if (scrollTop < lastScrollTop) {
         setShowHeader(true); // Show header on scroll up
@@ -29,11 +29,12 @@ function Header() {
 
   return (  
     <header   className= {showHeader? " bg-white text-white sticky left-0 top-0 z-50 w-full py-4  transition duration-100" : "bg-white shadow text-white sticky left-0 top-0 z-50 w-full py-4  transition duration-100" }>
-    <nav className="container mx-auto flex justify-between px-14 ">
+    <nav className="container mx-auto flex justify-between px-2 md:px-14 ">
       <div className="text-2xl font-bold text-black  ">
         <Link to="/"> eventSchedular</Link>
       </div>
-      <div className='flex-1 ml-24  '>
+      {/* flex-1 ml-24   */}
+      <div className='hidden md:flex flex-1 ml-24 justify-center'>
         <ul className='inline-flex space-x-7'>
          
 
@@ -46,6 +47,7 @@ function Header() {
       <div>
         <a className='inline-flex h-10 px-[23px] py-2.5 bg-white rounded-[32px] border border-zinc-100 justify-center items-center text-green-600 hover:border-green-600 ease-linear duration-100' href="/auth/sign-in">Sign In</a>
       </div>
+
     </nav>
   </header>
   );

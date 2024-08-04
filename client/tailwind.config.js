@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    backgroundImage: {
+      'smart-pay': "url('../public/smartpay_bg.svg')",
+    },
   },
   plugins: [],
 }

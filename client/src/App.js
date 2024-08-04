@@ -6,6 +6,11 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import ContactPage from './pages/ContactPage';
+import SignIn from './auth/signIn';
+import SignUp from './auth/signUp';
+
+
+
 
 export default function App() {
   return (
@@ -16,7 +21,11 @@ export default function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/auth/sign-in" element={<SignIn/>}></Route>
+        <Route path="/auth/sign-up" element={<SignUp/>}></Route>
+
       </Routes>
+        {/* <PrivateRoute path="/profile" element={<Profile />} /> */}
       <Footer/>
      </BrowserRouter>
   );
