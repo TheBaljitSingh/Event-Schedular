@@ -4,6 +4,8 @@ import culturalImg from "../assets/images/diwali-celebration.svg"
 import singerImg from "../assets/images/singer.svg"
 import aiImg from "../assets/images/ai.jpg"
 import concertImg from "../assets/images/concert.jpg"
+import Footer from '../components/shared/Footer';
+import Header from '../components/shared/Header';
 function HomePage() {
 
 
@@ -55,6 +57,8 @@ function HomePage() {
 
 
   return (
+    <div>
+      <Header/>
     <div className="bg-opacity-50">
     <div className={`bg-smart-pay bg-contain flex justify-center items-center min-w-full h-screen md:min-h-[750px] min-h-screen pb-20 pt-45 mx-auto p-4 `} >
       <div className='mx-auto w-full px-4 md:px-8'>
@@ -97,7 +101,7 @@ function HomePage() {
       {events.map(event => (
         <div
           key={event.id}
-          className="animate_top z-10  rounded-lg border border-black/opacity-10 backdrop-blur-[8.70px] bg-white p-7.5 xl:p-12.5 p-10"
+          className="animate_top z-10 bg-lime-200 bg-opacity-15 rounded-lg border border-black/opacity-10 backdrop-blur-[8.70px] p-7.5 xl:p-12.5 p-10"
           style={{ opacity: 1, transform: 'none' }}
         >
           <div className="relative flex h-16 w-16 items-center justify-center">
@@ -113,7 +117,13 @@ function HomePage() {
   </div>
       
     </div>
+    <Footer/>
+
     </div>
+    </div>
+
+  
+    
   );
 }
 

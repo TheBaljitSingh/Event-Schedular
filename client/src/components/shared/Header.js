@@ -12,7 +12,7 @@ function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      if (scrollTop > 70 && scrollTop> lastScrollTop) {
+      if (scrollTop > 10 && scrollTop> lastScrollTop) {
         setShowHeader(false); // Hide header on scroll down
       } else if (scrollTop < lastScrollTop) {
         setShowHeader(true); // Show header on scroll up

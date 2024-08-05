@@ -1,7 +1,7 @@
 import React from 'react';
-import twitterImg from "../assets/images/twitter.svg"
-import youtubeImg from "../assets/images/youtube.svg"
-import linkedinImg from "../assets/images/linkedin.svg"
+import twitterImg from "../../assets/images/twitter.svg"
+import youtubeImg from "../../assets/images/youtube.svg"
+import linkedinImg from "../../assets/images/linkedin.svg"
 
 
 function Footer() {
