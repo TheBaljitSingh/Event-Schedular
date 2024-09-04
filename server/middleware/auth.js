@@ -6,9 +6,13 @@ exports.isAuthenticatedUser = async(req, res, next)=>{
    
     
     try {
-        // const {token} = req.cookies; // Assuming token is sent in the Authorization header
-        const token = req.headers['authorization']?.split(' ')[1];
-        console.log("print Bearer token "+req.cookie);
+
+        console.log("req.user: "+req.user);
+        
+        const {token} = req.cookies; // Assuming token is sent in the Authorization header
+        // const token = req.header('Authorization')?.split(' ')[1];
+        // console.log("print Bearer token "+req.cookie);
+        // console.log(req.header('Authorization'));
 
     
         if(!token){
@@ -31,6 +35,7 @@ exports.isAuthenticatedUser = async(req, res, next)=>{
         }
     
         req.user = authUser;
+        
         // Now you can access the authenticated user in your routes using req.user
     
         console.log(decodedData);

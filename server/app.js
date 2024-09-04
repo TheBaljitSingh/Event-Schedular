@@ -10,14 +10,22 @@ require('dotenv').config();
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
+app.use(cors({
+    credentials: true,
+    origin: "http://localhost:3001"
+}));
+
+
+
 
 
 //route importing
-const user = require('../server/routes/userRoute');
+const userRoute = require('../server/routes/userRoute');
+const eventRoute = require("../server/routes/eventRoute");
 
+app.use("/api/v1/", userRoute);
+app.use("/api/v1", eventRoute);
 
-app.use("/api/v1/", user);
 
 
 app.get("/", function(req, res){

@@ -36,7 +36,7 @@ const userSchema = new mongoose.Schema({
     },
     role:{
         type:String,
-        default:"user",
+        default:"User",
     },
     createdAt:{
         type: Date,
@@ -48,6 +48,16 @@ const userSchema = new mongoose.Schema({
         default: Date.now(),
 
     },
+    eventsParticipated:[{
+        eventId:{
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Event"
+        },
+        participationDate: {
+            type: Date,
+            default: Date.now()
+        }
+    }],
     resetPasswordToken:String, 
     resetPasswordExpire:Date,
 

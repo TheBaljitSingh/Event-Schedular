@@ -78,7 +78,7 @@ exports.googleLoginUser = async (req, res) => {
     // Set HTTP-only cookie with the token
     res.status(200).cookie("token", token, {
       httpOnly: true,
-      sameSite: 'strict',
+    //   sameSite: 'strict',
     }).json({ message: 'User authenticated', userId: payload['email'] });
 
   } catch (error) {
@@ -112,7 +112,6 @@ exports.loginUser = async (req, res)=>{
 }
 exports.logoutUser = async(req, res, next)=>{
 
-    let {token} = req.body;
     // console.log(token.substring(6));
 
     // token.substring(6);
@@ -131,9 +130,12 @@ exports.logoutUser = async(req, res, next)=>{
 
 exports.getUserDetails = async (req, res) => {
     try {
-        console.log(`hello ${req.user.name}, how are you`);
+        const {user} = req;
 
-        const user = await User.findById(req.user.id);
+        console.log(user);
+
+        console.log(`hello ${user.name}, how are you`);
+
 
         if (!user) {
             return res.status(404).json({
