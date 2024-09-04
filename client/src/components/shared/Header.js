@@ -28,7 +28,7 @@ function Header() {
 
 
   return (  
-    <header   className= {showHeader? " bg-white text-white sticky left-0 top-0 z-50 w-full py-4  transition duration-100" : "bg-white shadow text-white sticky left-0 top-0 z-50 w-full py-4  transition duration-100" }>
+    <header   className= {showHeader? " bg-white text-white sticky left-0 top-0 z-50 w-full py-4  transition duration-100" : "bg-white shadow-md text-white sticky left-0 top-0 z-50 w-full py-4  transition duration-100" }>
     <nav className="container mx-auto flex justify-between px-2 md:px-14 ">
       <div className="text-2xl font-bold text-black  ">
         <Link to="/"> eventSchedular</Link>
@@ -39,6 +39,7 @@ function Header() {
          
 
         <Link to="/" className="p-2 font-semibold text-green-600">Home</Link>
+        <Link to="/events" className='p-2 hover:text-green-600 ease-in-out duration-50 text-black font-semibold'>Events</Link>
         <Link to="/about" className="p-2 hover:text-green-600 ease-in-out duration-50 text-black font-semibold">About</Link>
         <Link to="/services" className="p-2 hover:text-green-600 ease-in-out duration-50 text-black font-semibold">Services</Link>
         <Link to="/contact" className="p-2 hover:text-green-600 ease-in-out duration-50 text-black font-semibold">Contact</Link>

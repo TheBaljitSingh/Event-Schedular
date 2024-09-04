@@ -6,6 +6,7 @@ import aiImg from "../assets/images/ai.jpg"
 import concertImg from "../assets/images/concert.jpg"
 import Footer from '../components/shared/Footer';
 import Header from '../components/shared/Header';
+import bgImg from "../assets/images/bg.webp"
 function HomePage() {
 
 
@@ -60,7 +61,7 @@ function HomePage() {
     <div>
       <Header/>
     <div className="bg-opacity-50">
-    <div className={`bg-smart-pay bg-contain flex justify-center items-center min-w-full h-screen md:min-h-[750px] min-h-screen pb-20 pt-45 mx-auto p-4 `} >
+    <div  style={{ backgroundImage: `url(${bgImg})` }} className={` bg-contain flex justify-center items-center min-w-full h-screen md:min-h-[750px] min-h-screen pb-20 pt-45 mx-auto p-4 `} >
       <div className='mx-auto w-full px-4 md:px-8'>
         <div className='flex flex-col'>
           <div className='flex justify-center items-center gap-8 flex-col'>

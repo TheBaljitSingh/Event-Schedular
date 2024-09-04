@@ -14,6 +14,8 @@ const GoogleAuth = () => {
     const decoded = jwtDecode(token);
     console.log('Decoded User:', decoded);
 
+    
+
     try {
       const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/google-login`, {
         token,

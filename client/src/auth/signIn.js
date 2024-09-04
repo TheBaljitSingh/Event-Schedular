@@ -5,8 +5,10 @@ import { ToastContainer, toast } from 'react-toastify';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 import 'react-toastify/dist/ReactToastify.css';
 
+
 import GoogleAuth from './GoogleAuth';
 
+axios.defaults.withCredentials = true;
 
 const SignIn = () => {
 
@@ -33,39 +35,36 @@ const SignIn = () => {
     setEmail("");
     setPassword("");
 
-    // await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/login`,{email, password})
-    // .then(res =>{
-    //     console.log(res);
+    await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/login`,{email, password})
+    .then(res =>{
+        console.log(res);
         
-    //     if(res.status===200){
-    //         // console.log("login hua");
-    //         // // const user  = res.data.user;
-    //         // // setUser(user);
+        if(res.status===200){
+            console.log("loged in and cookie is saved");
+            // // const user  = res.data.user;
+            // // setUser(user);
 
-            
-    //         // Cookies.set('token', res.data.token, {expires: 3});
-    //         // // document.cookie = `token=${res.data.token}`;  
-    //         // console.log("cookie set ho gya");
-            
+            // cookies will be automatically saved 
+          
             
           
-    //         toast.success('Login successful! Redirecting to dashboard...', {
-    //             position: "bottom-center",
-    //             onClose: () => navigate('/Dashboard')
-    //           });
-    //     }else{
-    //         toast.error('Invalid Credentials',{
-    //             position: "bottom-center",
-    //         })
-    //     }
+            toast.success('Login successful! Redirecting to profile...', {
+                position: "bottom-center",
+                onClose: () => navigate('/me')
+              });
+        }else{
+            toast.error('Invalid Credentials',{
+                position: "bottom-center",
+            })
+        }
             
-    //     })
-    // .catch(error=>{
-    //     console.log("login failed ", error.message);
-    //     toast.error(`${error.message}`,{
-    //         position: "bottom-center"
-    //     });
-    // })
+        })
+    .catch(error=>{
+        console.log("login failed ", error.message);
+        toast.error(`${error.message}`,{
+            position: "bottom-center"
+        });
+    })
     
 
   };
